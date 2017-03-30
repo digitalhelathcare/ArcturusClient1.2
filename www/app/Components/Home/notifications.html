@@ -1,0 +1,70 @@
+<ion-view view-title="Notifications" style=" font-size: x-large;" ng-controller="notificationCtrl" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-android-menu" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-notifications" menu-toggle="right" ui-sref="app.notifications">
+        </button>
+    </ion-nav-buttons>
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+	
+
+
+
+<div id="card_background">
+	<div class="list card">
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-android-alert" style="color:white;"></i>
+    Nurse getting late due to heavy rain ...!
+  </a>
+
+</div>
+</div>
+
+
+<div id="card_background">
+	<div class="list card">
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-android-alert" style="color:white;"></i>
+    Nurse getting late due to heavy rain ...!
+  </a>
+
+</div>
+</div>
+
+<div id="card_background">
+	<div class="list card">
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-android-alert" style="color:white;"></i>
+    Nurse getting late due to heavy rain ...!
+  </a>
+
+</div>
+</div>
+
+
+
+
+
+
+
+    </ion-content>
+     <div class="float-button">
+     <span class="height-fix">
+       <button id="fab-profile" ui-sref="app.jobAdd" class="button button-fab button-fab-bottom-right fab-fixed button-assertive pane"  ng-click="CallTel(16783839973)" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+           <i class="ion-ios-telephone"></i>
+		   <h5 style="color:white">Call Us</h5>
+		   
+       </button>
+     </span>
+    </div>
+</ion-view>
+

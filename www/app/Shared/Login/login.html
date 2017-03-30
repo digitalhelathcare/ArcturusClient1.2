@@ -1,0 +1,70 @@
+<ion-view view-title="Arcturus Care"   ng-controller="LoginCtrl" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+
+    <ion-content  ng-controller="LoginCtrl" >
+         <div class="prof" id="banner_image">
+
+          
+</div>
+<!--
+<div style="padding-top:30%;">
+</div>-->
+        <form role="form" name="LoginForm" ng-submit="LoginCall(AccountExist)" novalidate>
+
+
+            <pdf-viewer
+                    delegate-handle="relativity-special-general-theory"
+                    url="pdfUrl"
+                    scale="1"
+                    show-toolbar="true"></pdf-viewer>
+
+         <div class="list2" id="banner_buttons_paddinglogin">
+		<div class="row" id="login_textdiv">
+  <div class="col col-100" id="head_style"  >Login to Arcturus Care</div>
+  
+</div>
+			<div  id="signup_form_div"align="center">
+          <label class="item item-input" placeholder="Phone Number" highlight-color="positive" type="phoneNumber" style="padding:10px !important;" >
+			<i class="fa fa-phone-square" aria-hidden="true" style="color:#737373; font-size:28px;"></i>
+                &nbsp;&nbsp;<input type="tel" placeholder="Enter registered phone number" class="md-input" name="phoneNumber" ng-model="AccountExist.phoneNumber" phone-input ng-minlength="14" required>
+          </label>
+           <span id="errormsg" ng-show=" submitted || LoginForm.phoneNumber.$dirty && LoginForm.phoneNumber.$invalid">
+             <span ng-show="LoginForm.$submitted && LoginForm.phoneNumber.$error.required">Phone number is required</span>
+                  <span  ng-show="LoginForm.$submitted && LoginForm.phoneNumber.$error.minlength">
+                       Please enter valid number</span>
+                  <!--<span  ng-show="LoginForm.$submitted && LoginForm.phoneNumber.$error.maxlength">
+                        Please enter valid number</span>-->
+            </span>
+
+			</div>
+        </div>
+		
+		
+		
+        <div class="padding">
+            <button  class="button button-full" ng-click="submitted=true"  id="login_button">Login</button>
+        </div>
+		
+		 <div align="center">
+            <span style="color:#ff6666;font-size:20px;"> {{loginError}} </span> </div>
+
+<div class="list" id="banner_buttons_padding">
+            <div class="list1">
+<div class="" align="center">
+  <h4 ui-sref="app.loginHelp" id="create_text" style="color:white;">Help</h4>
+  
+  
+</div>
+</div>
+</div>
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
+
+        </form>
+       
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,117 @@
+<ion-view view-title="Patient Profile" style=" font-size: x-large;" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-android-menu" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+	<!-- <ion-nav-buttons side="right"> -->
+        <!-- <button class="button button-icon button-clear ion-android-notifications" menu-toggle="right" ui-sref="app.notifications"> -->
+        <!-- </button> -->
+    <!-- </ion-nav-buttons> -->
+	
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+	
+       
+
+  
+  <div style="padding:4%;">
+  </div>
+  <div id="Feedback_paddingdiv">
+  <div class="row" id="login_textdiv2">
+  <div class="col col-100" id="head_style"  >Edit your profile here</div>
+  
+</div>
+				<div id="">
+				
+        <form role="form" name="profileForm"  >
+  
+        <div class="list" id="list_items_homecss5">
+          
+
+               <div class="Profile_background" id="list_items_profilecss">
+
+                <div class="item item-input-inset">
+    <label class="item-input-wrapper"  id="profile_inputs">
+      <input type="text" placeholder="First name" ng-model="update.firstName" name="firstName" id="profile_inputs_texts" only-alphabets ng-change="FirstNameChange()" maxlength="20" ng-readonly="firstNameTF" focus-me="shouldBeOpen" required>
+    </label>
+      <button class="button button-small button-clear" id="profile_inputs_buttons" ng-click="readFname(); shouldBeOpen=true" style="float:left;">
+          <i class="fa fa-pencil" aria-hidden="true" ></i>
+      </button>
+  </div>
+                    <!--<span id="errormsg" ng-show="submitted || profileForm.firstName.$dirty && profileForm.firstName.$invalid">
+                         <span ng-show="profileForm.firstName.$error.required">First name is required.</span>
+                     </span>-->
+                <div class="item item-input-inset">
+    <label class="item-input-wrapper"  id="profile_inputs">
+      <input type="text" placeholder="Last name" ng-model="update.lastName" name="lastName" id="profile_inputs_texts" only-alphabets ng-change="LastNameChange()" maxlength="20" ng-readonly="lastNameTF" focus-me="OpenLastName" required>
+    </label>
+         <button class="button button-small button-clear" id="profile_inputs_buttons" ng-click="readLname(); OpenLastName=true">
+             <i class="fa fa-pencil" aria-hidden="true" ></i>
+         </button>
+  </div>
+                    <!-- <span id="errormsg" ng-show="profileForm.lastName.$dirty && profileForm.lastName.$invalid">
+                        <span ng-show="profileForm.lastName.$error.required">last name is required.</span>
+                    </span>-->
+                <div class="item item-input-inset">
+    <label class="item-input-wrapper"  id="profile_inputs">
+      <input type="email" placeholder="Email" name="emailtxt" ng-model="update.emailId" ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+             id="profile_inputs_texts" ng-change="EmailChange()" maxlength="50" ng-readonly="emailIdTF" focus-me="OpenEmail" required>
+
+
+    </label>
+
+                <button class="button button-small button-clear" id="profile_inputs_buttons" ng-click="readEmailid(); OpenEmail=true">
+                    <i class="fa fa-pencil" aria-hidden="true" ></i>
+                </button>
+
+  </div>
+                   <span id="errormsg" ng-show="profileForm.emailtxt.$dirty && profileForm.emailtxt.$invalid">
+            <span ng-show="profileForm.emailtxt.$error.required">Enter Email Id</span>
+            <span ng-show="profileForm.emailtxt.$dirty && !profileForm.emailtxt.$error.required">This email format is invalid!</span>
+        </span>
+                <div class="item item-input-inset">
+    <label class="item-input-wrapper"  id="profile_inputs">
+      <input type="text" placeholder="Phone Number" ng-model="update.phoneNumber" id="profile_inputs_texts" readonly>
+	  
+    </label>
+	 <button class="button button-small button-clear" id="profile_inputs_buttons" >
+      <i class="fa fa-pencil" aria-hidden="true" style="color:transparent;"></i>
+    </button>
+  </div>
+
+
+                </div>
+        </div>
+  
+		 <div class="padding">
+            <button  class="button button-full" id="login_button" ng-disabled="profileForm.$invalid" ng-click="updateProfCall(update)">Update</button>
+        </div>
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
+
+      </form>
+</div>
+
+
+
+  
+   
+
+   
+
+        
+ 
+    </ion-content>
+     <div class="float-button">  
+      <span class="height-fix">  
+      <button id="fab-profile" ui-sref="app.jobAdd" class="button button-fab button-fab-bottom-right fab-fixed button-assertive pane" ng-click="CallTel(16783839973)" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">  
+        <i class="ion-ios-telephone"></i> 
+		  <h5 style="color:white">Call Us</h5> 
+		   
+       </button> 
+ </span> 
+     </div>  
+	
+</ion-view>

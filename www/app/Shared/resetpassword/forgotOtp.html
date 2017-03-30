@@ -1,0 +1,61 @@
+<ion-view view-title="Arcturus Care" ng-controller="signUpOtpCtrl" align-title="left" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-content ng-controller="forgotOtpCtr" class="signup_background">
+        <div class="prof" id="banner_image">
+
+
+        </div>
+        <!--
+         <div style="padding-top:30%;">
+        </div> -->
+        <form  role="form" name="OtpForm" ng-submit="otpCall(validateOTP)" novalidate>
+            <div class="list2" id="banner_buttons_paddinglogin">
+                <div class="row" id="login_textdiv">
+                    <div class="col col-100" id="head_style">Please enter passcode</div>
+
+                </div>
+
+                <div  id="signup_form_div"align="center">
+
+                    <label class="item item-input" placeholder="Enter PassCode" highlight-color="positive" type="text" >
+                        <i class="fa fa-phone-square" aria-hidden="true" style="color:#737373; font-size:28px;"></i>
+                        &nbsp;&nbsp;<input type="tel" placeholder="Enter PassCode" class="md-input" name="Otp" ng-model="validateOTP.otp" maxlength="5" required>
+
+                    </label>
+            <span id="errormsg" ng-show=" submitted || OtpForm.Otp.$dirty && OtpForm.Otp.$invalid">
+             <span ng-show="OtpForm.$submitted && OtpForm.Otp.$error.required">Passcode is required</span>
+                  
+            </span>
+                    <!-- <span style="color:#ff6666;font-size:14px;float:left;padding-left:10%;"> {{otpError}} </span>-->
+                    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
+                    <!-- <div align="right" style="padding-right:3%;"> -->
+                    <!-- <span style="color:#f36853;font-size:16px;">Resend OTP ?</span> -->
+                    <!-- </div> -->
+                    <!-- <div align="center"> -->
+                    <!-- <span style="color:#526223;font-size:16px;font-weight:bold;"> -->
+                    <!-- Time Remining -->
+                    <!-- </span> -->
+                    <!-- <span class="button button-clear button-positive button-block icon ion-ios-timer-outline button-rounded"style="color:#DE5437;font-weight:bold;">&nbsp;09:13:20</span> -->
+                    <!-- </div> -->
+                </div>
+                <br>
+            </div>
+            <div class="padding">
+                <button name="Submit" class="button button-full" id="login_button" ng-click="submitted=true" >Next</button>
+            </div>
+            <div align="center"><h5 style="color:white;">MAIL sent successfully</h5></div>
+
+        </form>
+
+    </ion-content>
+</ion-view>
+
+
+
+
+
+
+

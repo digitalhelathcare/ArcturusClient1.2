@@ -1,0 +1,69 @@
+<ion-view view-title="Arcturus Care " style=" font-size: x-large;" ng-controller="homeCtrl" class="signup_background" id="homepage">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-android-menu" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+
+	 <ion-nav-buttons side="right" >
+      <button class="button button-icon button-clear ion-android-more-horizontal" ng-show="actType() == 'F'" menu-toggle="right" ng-click="openPopover($event)">
+         </button> 
+    </ion-nav-buttons>
+    <ion-content ng-class="{expanded:$scope.isExpanded}" class="background"> 
+	<!-- <div style="width:100%;"> -->
+	<!-- <div class="" id="notify"> -->
+
+  <!-- <a href="#" class="item item-icon-left" style="font-size:13px;"> -->
+    <!-- <i class="icon ion-android-alert" style="color:white;"></i> -->
+    <!-- Nurse getting late due to heavy rain ...! -->
+  <!-- </a> -->
+
+<!-- </div> -->
+
+<!-- </div> -->
+<div style="padding-top:5%;">
+</div>
+
+
+      
+	  <div id="footer" style="margin:10px;">
+	 <div class = "row" >
+         <div class = "col col-33"  ><img src="assets/img/Arcturush.png"style="background-size: cover;width:80%;" ui-sref="app.content" ></div>
+	 <!--<div class = "col col-33"  ><img src="assets/img/Arcturush.png"style="background-size: cover;width:80%;" ng-click="contentCall()" ></div>-->
+	 <div class = "col col-33"><img src="assets/img/patientrights.png"style="background-size: cover;width:80%;" ng-click="PatientsRights()"></div>
+	 <div class = "col col-33"><img src="assets/img/ViewProfile.png"style="background-size: cover;width:80%;" ui-sref="app.profile"></div>
+   
+  
+   
+</div>
+<div class = "row" style="">
+ 
+   <div class = "col col-33"><img src="assets/img/consent.png"style="background-size: cover;width:80%;" ng-click="ConsentForms()"></div>
+   <div class = "col col-33"><img src="assets/img/Hospice.png" style="background-size: cover;width:80%;" ng-click="HospiceQualifications()"></div>
+   <div class = "col col-33"><img src="assets/img/Feedback.png"style="background-size: cover;width:80%;" ui-sref="app.Feedback"></div>
+
+    <!--<ng-pdf template-url="app/Components/Home/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>-->
+</div>
+<div class = "row" style="">
+   
+  
+   
+</div>
+</div>
+    </ion-content>
+    <div class="float-button">
+     <span class="height-fix">
+       <button id="fab-profile" ui-sref="app.jobAdd" class="button button-fab button-fab-bottom-right fab-fixed button-assertive pane" ng-click="CallTel(16783839973)" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+           <i class="ion-ios-telephone"></i>
+		   <h6 style="color:white">Call Us</h6>
+		   
+       </button>
+     </span>
+    </div>
+
+
+</ion-view>
+

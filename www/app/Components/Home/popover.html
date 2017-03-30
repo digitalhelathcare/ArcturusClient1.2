@@ -1,0 +1,13 @@
+
+    <ion-popover-view style="top:9%;left:32%;margin-left:-1px;">
+        <ion-header-bar id="pop_header">
+            <h1 class="title">Patients</h1>
+        </ion-header-bar>
+        <ion-content ng-controller="helpCtr">
+             
+            <a class="item" ng-repeat="patient in patientDetails" ng-click="bindCall(patient.firstName)" target="_blank" style="border-bottom:1px solid #536324;">
+                {{patient.firstName}} 
+            </a>
+         
+        </ion-content>
+    </ion-popover-view>

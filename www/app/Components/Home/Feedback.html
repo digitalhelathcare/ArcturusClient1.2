@@ -1,0 +1,79 @@
+<ion-view view-title="Feedback"style=" font-size: x-large;" ng-controller="FeedbackCtr" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-android-menu" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+	<!-- <ion-nav-buttons side="right"> -->
+        <!-- <button class="button button-icon button-clear ion-android-notifications" menu-toggle="right" ui-sref="app.notifications"> -->
+        <!-- </button> -->
+    <!-- </ion-nav-buttons> -->
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+	<div style="padding:4%;">
+  </div>
+  <div id="Feedback_paddingdiv">
+	 <div class="row" id="login_textdiv2">
+  <div class="col col-100" id="head_style"  >Please Provide your feedback</div>
+  
+</div>
+		
+	   <div class="Profile_background" id="list_items_profilecss">
+
+           <div>
+                <span></span>
+           </div>
+
+           <div ng-repeat="getList in GetFeedbackList | limitTo:pageSize">
+	            <div id="Feedback_Question">
+                    <h2 id="Feedback"><span style="font-size:20px;color:#556525;">{{getList.QuestionItem}}</span></h2>
+                </div>
+
+	            <div class="item-text-wrap" ng-repeat="opt in getList.Rating" >
+				<div>
+                    <!--<input type="radio" ng-model="answerModel.answer" name="getList.id" value="{{opt.rid}}" />{{opt.rattingName}}-->
+                    <ion-radio
+                            id="Feedback_checkbox"
+                            ng-model="answerModel.answer" name="getList.id" value="{{opt.rid}}"
+                            ng-hide="getList.id==5"
+                            ng-click="GetRattingVal($parent.$index + currentPage,getList.id,getList.QuestionItem,opt.rattingName)">{{opt.rattingName}}</ion-radio>
+                    <div style="padding-left: 3%;padding-bottom:3%;"> <textarea type="text" ng-model="textmodel.rattingName" ng-hide="getList.id!=5" placeholder="Your comment..." rows="10" cols="30" style="border:1px solid #91AD40;padding:3%;border-radius:10px;" maxlength="200"></textarea>
+					</div>
+
+                </div>
+       </div>
+
+          <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
+
+           <div class="button-bar"  id="feedback_button_bar">
+    <button type="button" class="button button-small" id="feedback_secondbutton" ng-disabled="currentPage==0" ng-click="findPreviousRecords()">Previous</button>
+		&nbsp;
+    <button type="button" class="button button-small" id="feedback_secondbutton" ng-hide="currentPage>=NumOfRowsCount/pageSize-1" ng-click="findNextRecords()">Next</button>
+
+</div>
+<div>
+&nbsp;
+</div>
+               <button  class="button button-full" id="login_button" ng-hide="getList.id!=5" ng-click="SubmitFeedBack(textmodel)">Submit</button>
+
+           </div>
+</div>
+		 <div class="padding">
+                   </div>
+
+    </ion-content>
+     <div class="float-button">
+     <span class="height-fix">
+       <button id="fab-profile" ui-sref="app.jobAdd" class="button button-fab button-fab-bottom-right fab-fixed button-assertive pane"  ng-click="CallTel(16783839973)" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+           <i class="ion-ios-telephone"></i>
+		   <h5 style="color:white">Call Us</h5>
+		   
+       </button>
+     </span>
+    </div>
+</ion-view>
+
+
+

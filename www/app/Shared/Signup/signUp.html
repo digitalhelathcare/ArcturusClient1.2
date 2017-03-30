@@ -1,0 +1,100 @@
+<ion-view view-title="Registration" align-title="center" class="signup_background">
+    <ion-nav-bar class="bar-assertive-900" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-arrow-left-a "  ui-sref="app.login">
+        </button>
+    </ion-nav-buttons>
+    <ion-content ng-controller="SaveProfileCtrl" >
+          <!-- <div class="prof" id="banner_image">  -->
+
+          
+          <!-- </div> -->
+		  <!-- <div style="padding:5%;" ui-sref="app.login"> -->
+		  <!-- <i class="fa fa-chevron-circle-left" aria-hidden="true" style="font-size:30px;color:#8CA83E;" ui-sref="app.login"></i> -->
+		  <!-- </div> -->
+
+        <form role="form" name="SignUpForm" ng-submit="SaveProfileData(SaveProfile)" novalidate>
+		 
+		
+        <div class="list2" id="banner_buttons_paddinglogin1">
+		<div class="row" id="login_textdiv">
+  <div class="col col-100" id="head_style"  >Register to Arcturus Care</div>
+
+</div>
+		
+		
+            <div  id="signup_form_div1"align="center">
+            <label class="item item-input" placeholder="Enter first name" highlight-color="positive" type="text" ng-class="{ 'has-error' : submitted && signUpForm.email.$error.required }" style="padding:10px !important;">
+			<i class="fa fa-user" aria-hidden="true" style="color:#848484; font-size:30px;"></i>
+                &nbsp;&nbsp;<input type="text" placeholder="Enter first name" class="item-input" name="firstName" ng-model="SaveProfile.firstName" only-alphabets maxlength="20" ng-readonly="firstNameEn" required>&nbsp;&nbsp;
+            </label>
+             <span id="errormsg" ng-show="submitted || SignUpForm.firstName.$dirty && SignUpForm.firstName.$invalid">
+             <span ng-show="SignUpForm.$submitted && SignUpForm.firstName.$error.required">First name is required</span>
+            </span>
+
+            <label class="item item-input" placeholder="Enter last name" highlight-color="positive" type="text" style="padding:10px !important;" >
+			<i class="fa fa-user" aria-hidden="true" style="color:#848484; font-size:30px;"></i>
+                &nbsp;&nbsp;<input type="text" placeholder="Enter last name" class="md-input" name="lastName" ng-model="SaveProfile.lastName" only-alphabets maxlength="20" ng-readonly="lastNameEn" required>
+            </label>
+            <span id="errormsg" ng-show="submitted || SignUpForm.lastName.$dirty && SignUpForm.lastName.$invalid">
+             <span ng-show="SignUpForm.$submitted && SignUpForm.lastName.$error.required">Last name is required</span>
+            </span>
+
+            <label class="item item-input" placeholder="Enter phone number" highlight-color="positive" type="phoneNumber" style="padding:10px !important;">
+			<i class="fa fa-phone-square" aria-hidden="true" style="color:#848484; font-size:28px;"></i>
+                &nbsp;&nbsp;<input type="text" placeholder="Enter phone number" class="md-input" name="phoneNumber" restrict-to="[0-9]" phone-input ng-model="SaveProfile.phoneNumber"  readonly required>
+            </label>
+            <span id="errormsg" ng-show=" submitted || SignUpForm.phoneNumber.$dirty && SignUpForm.phoneNumber.$invalid">
+             <span ng-show="SignUpForm.$submitted && SignUpForm.phoneNumber.$error.required">Phone number is required</span>
+               <!--   <span  ng-show="SignUpForm.$submitted && SignUpForm.phoneNumber.$error.minlength">
+                       Please enter valid number</span>-->
+                  <!--<span  ng-show="SignUpForm.phoneNumber.$error.maxlength">
+                        Please enter valid number</span>-->
+            </span>
+
+            <label class="item item-input" placeholder="Enter email" highlight-color="positive" type="text" style="padding:10px !important;" >
+			<i class="fa fa-envelope" aria-hidden="true" style="color:#848484; font-size:26px;"></i>
+                &nbsp;&nbsp;<input type="email" placeholder="Enter email" class="md-input" overwrite-email name="email" ng-model="SaveProfile.emailId" maxlength="50" ng-readonly="emailEn" required>
+            </label>
+             <span id="errormsg" ng-show="submitted || SignUpForm.email.$dirty && SignUpForm.email.$invalid">
+             <span ng-show="SignUpForm.$submitted && SignUpForm.email.$error.required">Email is required</span>
+            <!-- <span ng-show="SignUpForm.email.$error.email && SignUpForm.email.$touched">This email format is invalid!</span>-->
+            </span>
+			
+			 <label class="item item-input" placeholder="Enter password" highlight-color="positive" type="text" style="padding:10px !important;" >
+			<i class="fa fa-key" aria-hidden="true" style="color:#848484; font-size:26px;"></i>
+                &nbsp;&nbsp;<input type="password" placeholder="Enter password" class="md-input"  name="password" ng-model="SaveProfile.password" maxlength="12" required>
+            </label>
+             <span id="errormsg" ng-show="submitted || SignUpForm.password.$dirty && SignUpForm.password.$invalid">
+             <span ng-show="SignUpForm.$submitted && SignUpForm.password.$error.required">Password is required</span>
+            </span>
+			
+			
+			 <label class="item item-input" placeholder="Confirm password" highlight-color="positive" type="text" style="padding:10px !important;" >
+			<i class="fa fa-key" aria-hidden="true" style="color:#848484; font-size:26px;"></i>
+                &nbsp;&nbsp;<input type="password" placeholder="Confirm password" class="md-input"  name="password_c" ng-model="SaveProfile.password_c" nx-equal-ex="SaveProfile.password" maxlength="12" required>
+            </label>
+             <span id="errormsg" ng-show="submitted ||  SignUpForm.password_c.$dirty && SignUpForm.password_c.$invalid">
+                  <span ng-show="SignUpForm.$submitted &&  SignUpForm.password_c.$error.required  " >Confirm password is required</span>
+                 <!--<span ng-show="SignUpForm.password_c.$error.nxEqualEx && SignUpForm.password_c.$touched"> Password Do Not Match</span>-->
+              </span>
+
+        </div>
+		
+		</div>
+
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
+
+            <div class="padding">
+            <button name="Submit"  class="button button-full" ng-click="submitted=true" id="login_button" >Register</button>
+        </div>
+		 </form>
+
+        <div align="center">
+            <span style="color:red;"> {{errorMsg}} </span> </div>
+    </ion-content>
+</ion-view>
+
