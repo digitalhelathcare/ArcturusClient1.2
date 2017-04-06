@@ -64,14 +64,15 @@ debugger;
                 var Getval = RsltInfo.patientDetails;
                 var GetRstval = RsltInfo.resultObject;
                 var ResltVal = RsltInfo.responseCode;
-
-                $rootScope.actType=RsltInfo.resultObject.accountType;
+               
+                
                 $localStorage.PatientDetails = Getval;
 
                 debugger;
 
 
                 if(RsltInfo.responseCode == 0){
+					$rootScope.actType=RsltInfo.resultObject.accountType;
                     var emailId=RsltInfo.resultObject.emailId;
                     var firstName=RsltInfo.resultObject.firstName;
                     var lastName=RsltInfo.resultObject.lastName;
@@ -94,7 +95,7 @@ debugger;
                 }
 
                 else if (RsltInfo.errorMessage =="Please check password"){
-                    $scope.hide($ionicLoading);
+				   $scope.hide($ionicLoading);
                     /*$scope.passwordError = RsltInfo.errorMessage;*/
                     /*toaster.pop('error', "", '<ul><li>Please check password</li></ul>', 3000, 'trustedHtml');*/
                     var toast = ({

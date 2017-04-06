@@ -8,27 +8,43 @@
     <ion-side-menu side="left">
         <ion-header-bar class="dark-bg expanded">
 		
-            <span class="avatar" style="background: url('assets/img/icc.png'); background-size: cover; float:left;" ></span>
+            <span class="avatar" style="background: url('assets/img/icc.png'); background-size: cover; float:left; width:60px;height:60px;"  ></span>
 			
 			<div style="padding-top:3%;"align="center" ng-show="actType() == 'P'">
-            <h2><span  style="font-size:14px;padding-left:3%;text-align:center;" data-ng-bind="firstName()">{{firstName}}</span><span  style="font-size:14px;padding-left:3%;text-align:center;" data-ng-bind="lastName()">{{lastName}}</span></h2>
+            <h2><span  style="font-size:16px;padding-left:3%;text-align:center;" data-ng-bind="firstName()">{{firstName}}</span><span  style="font-size:16px;padding-left:3%;text-align:center;" data-ng-bind="lastName()">{{lastName}}</span></h2>
 			</div>
-            <div style="padding-top:3%;"align="center" ng-show="actType() == 'F'">
-                <h2><span  style="font-size:14px;padding-left:3%;text-align:center;" data-ng-bind="patientName()"></span></h2>
-            </div>
 			
+			
+          
+			
+			
+			<div class="item item-icon-left" ng-show="actType() == 'F'"  style="width:100%; display: inline-block; padding-top:30%;">
+                             <p style="color: #ffffff;font-size:18px;padding-left:0%;padding-right:28%;text-align:center;">  <span style=" color:white;font-size:18px;padding-left:0%;text-align:center;" data-ng-bind="patientName()"></span></p>
+               
+
+
+           </div>
+			
+			
+			
+			<h2 class="item item-icon-left" ng-show="actType() == 'F'" style="width:100%; display: inline-block;border-top:1px solid #5f6a6d;border-bottom:1px solid #5f6a6d; padding-top:5%;font-size:14px;">
+                             <p style="color: #ffffff;font-size:14px;padding-left:0%;text-align:left;">  <span style=" color:white;font-size:14px;padding-left:0%;text-align:left;font-size:14px;"ng-bind="firstName()" ></span><span style=" color:white;font-size:14px;" ng-bind="lastName()"></span>  </p>
+               <i class="icon ion-person" style="color:white;"></i>
+
+
+           </h2>
+		   
         </ion-header-bar>
 
 
         <ion-content class="stable-bg has-expanded-header" id="sidemenu_background">
 
-            <div class="item item-icon-left" ng-show="actType() == 'F'"  style="width:100%; display: inline-block;border:1px solid #5f6a6d; z-index: 1000;">
-               <!-- <span class="" style="display:inline-block;color: #ffffff;float:left;width:30%;" data-ng-bind="firstName()" ></span> <span calss="item" style="display:inline-block;color: #ffffff;float:left;width:30%;padding-right:4%;text-align: left;" data-ng-bind="lastName()" ></span>
- -->               <p style="color: #ffffff;">  <span ng-bind="firstName()"></span> <span ng-bind="lastName()"></span>  </p>
-                <i class="icon ion-person" style="color:white;"></i>
+            <!-- <div class="item item-icon-left" ng-show="actType() == 'F'"  style="width:100%; display: inline-block;border:1px solid #5f6a6d; z-index: 1000;"> -->
+                      <!-- <p style="color: #ffffff;">  <span ng-bind="firstName()"></span> <span ng-bind="lastName()"></span>  </p> -->
+                <!-- <i class="icon ion-person" style="color:white;"></i> -->
 
 
-            </div>
+            <!-- </div> -->
            <!-- <div style="padding-top:3%;"align="center" ng-show="actType() == 'F'">
                 <h2><span  style="font-size:14px;padding-left:3%;text-align:center;" data-ng-bind="firstName()">{{firstName}}</span><span  style="font-size:14px;padding-left:3%;text-align:center;" data-ng-bind="lastName()">{{lastName}}</span></h2>
             </div>

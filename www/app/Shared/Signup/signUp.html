@@ -75,7 +75,7 @@
 			
 			 <label class="item item-input" placeholder="Confirm password" highlight-color="positive" type="text" style="padding:10px !important;" >
 			<i class="fa fa-key" aria-hidden="true" style="color:#848484; font-size:26px;"></i>
-                &nbsp;&nbsp;<input type="password" placeholder="Confirm password" class="md-input"  name="password_c" ng-model="SaveProfile.password_c" nx-equal-ex="SaveProfile.password" maxlength="12" required>
+                &nbsp;&nbsp;<input type="password" placeholder="Confirm password" class="md-input"  name="password_c" ng-model="SaveProfile.password_c" nx-equal-ex="SaveProfile.password" maxlength="20" required>
             </label>
              <span id="errormsg" ng-show="submitted ||  SignUpForm.password_c.$dirty && SignUpForm.password_c.$invalid">
                   <span ng-show="SignUpForm.$submitted &&  SignUpForm.password_c.$error.required  " >Confirm password is required</span>
